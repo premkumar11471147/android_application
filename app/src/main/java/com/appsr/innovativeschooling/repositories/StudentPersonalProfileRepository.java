@@ -25,7 +25,7 @@ public class StudentPersonalProfileRepository {
     public StudentPersonalProfileRepository(Context application) {
         SchoolDatabase db = SchoolDatabase.getDatabase(application);
         dao = db.studentPersonalDao();
-        apiService = RetrofitClient.getInstance().createApiService(StudentPersonalApiService.class);
+        apiService = RetrofitClient.getInstance().create(StudentPersonalApiService.class);
     }
 
     public void insert(StudentPersonalProfile profile) {

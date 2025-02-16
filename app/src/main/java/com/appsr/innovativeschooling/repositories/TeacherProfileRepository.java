@@ -27,7 +27,7 @@ public class TeacherProfileRepository {
         SchoolDatabase db = SchoolDatabase.getDatabase(application);
         teacherProfileDao = db.teacherDao();
         allTeachers = teacherProfileDao.getAllTeachers();
-        teacherApiService = RetrofitClient.getInstance().createApiService(TeacherProfileApiService.class);
+        teacherApiService = RetrofitClient.getInstance().create(TeacherProfileApiService.class);
     }
 
     public void insert(TeacherProfile teacher) {

@@ -13,18 +13,18 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface StudentApiService {
-    @GET("students")
+    @GET("student")
     Call<List<StudentProfile>> getAllStudents();
 
-    @GET("students/{id}")
+    @GET("student/{id}")
     Call<StudentProfile> getStudentById(@Path("id") int id);
 
-    @POST("students")
+    @POST("student")
     Call<Void> createStudent(@Body StudentProfile student);
 
-    @PUT("students/{id}")
+    @PUT("student/{id}")
     Call<Void> updateStudent(@Path("id") int id, @Body StudentProfile student);
 
-    @DELETE("students/{id}")
+    @DELETE("student/{id}")
     Call<Void> deleteStudent(@Path("id") int id);
 }

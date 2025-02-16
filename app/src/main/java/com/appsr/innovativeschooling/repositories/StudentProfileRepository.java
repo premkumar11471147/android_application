@@ -26,10 +26,20 @@ public class StudentProfileRepository {
         SchoolDatabase db = SchoolDatabase.getDatabase(context);
         studentProfileDao = db.studentDao();
         allStudents = studentProfileDao.getAllStudents();
-        studentApiService = RetrofitClient.getInstance().createApiService(StudentApiService.class);
+        studentApiService = RetrofitClient.getInstance().create(StudentApiService.class);
     }
     public void insert(StudentProfile student) {
-        Executors.newSingleThreadExecutor().execute(() -> studentProfileDao.insertStudent(student));
+
+
+
+         Executors.newSingleThreadExecutor().execute(new Runnable() {
+                    @Override
+                    public void run () {
+                        //studentProfileDao.insertStudent(student);
+                        studentApiService.createStudent(student);
+                    }
+                });
+        //        Executors.newSingleThreadExecutor().execute(() -> studentProfileDao.insertStudent(student));
     }
 
     public void update(StudentProfile student) {
@@ -40,8 +50,9 @@ public class StudentProfileRepository {
         Executors.newSingleThreadExecutor().execute(() -> studentProfileDao.deleteStudent(student));
     }
 
-    public LiveData<List<StudentProfile>> getAllStudents() {
-        return allStudents;
+    public void getAllStudents(Callback<List<StudentProfile>> callback) {
+        studentApiService.getAllStudents().enqueue(callback);
+        //return allStudents;
     }
 
     public LiveData<StudentProfile> getStudentById(int id) {

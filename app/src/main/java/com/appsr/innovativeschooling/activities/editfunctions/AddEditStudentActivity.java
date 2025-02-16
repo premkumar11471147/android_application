@@ -76,7 +76,11 @@ public class AddEditStudentActivity extends AppCompatActivity {
             });
         }
 
-        btnSave.setOnClickListener(view -> saveStudent());
+        btnSave.setOnClickListener(view -> getData()/*saveStudent()*/);
+    }
+
+    private void getData(){
+        studentViewModel.fetchAllStudents();
     }
 
     private void saveStudent() {
@@ -102,6 +106,7 @@ public class AddEditStudentActivity extends AppCompatActivity {
             newStudent.setFirstName(firstName);
             newStudent.setLastName(lastName);
             newStudent.setRollNumber(Integer.parseInt(rollNumber));
+            newStudent.setAdmissionID("123456");
             newStudent.setClassId(classID);
             newStudent.setSchoolId(schoolID);
             studentViewModel.addStudent(newStudent);

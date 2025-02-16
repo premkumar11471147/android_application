@@ -74,18 +74,3 @@ public abstract class SchoolDatabase extends RoomDatabase {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
