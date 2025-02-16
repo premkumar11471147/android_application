@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.InnovativeSchooling"
+        tools:targetApi="31">
+        <activity
+            android:name=".activities.AddEditExamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ExamTimeTableActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.editfunctions.AddEditTeacherAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.TeacherAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.StudentAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.editfunctions.AddEditTeacherPersonalProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.TeacherPersonalProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.editfunctions.AddEditTeacherProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.TeacherProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.editfunctions.AddEditStudentPersonalProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.StudentPersonalProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.editfunctions.AddEditStudentActivity"
+            android:exported="false"
+            android:label="@string/title_activity_add_edit_student"
+            android:theme="@style/Theme.InnovativeSchooling" />
+        <activity
+            android:name=".activities.StudentProfileActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.InnovativeSchooling">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

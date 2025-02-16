@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/exam_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Exam Name" />
+
+    <EditText
+        android:id="@+id/exam_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Exam Date"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/exam_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Exam Time"
+        android:inputType="time" />
+
+    <EditText
+        android:id="@+id/exam_syllabus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Exam Syllabus" />
+
+    <Spinner
+        android:id="@+id/class_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/subject_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save" />
+</LinearLayout>
